@@ -1,0 +1,38 @@
+{
+    "name": "k-Subscription_anonymity",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Chrome Browser extension that provides anonymity to Twitter users through k-subscription",
+    "default_locale": "en",
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "k-Subscription_anonymity",
+        "default_popup": "popup.html?popup"
+    },
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": ["webRequest", "webRequestBlocking",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "icons": {
+        "128": "img/icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://twitter.com/oauth/authorize",
+                "https://twitter.com/oauth/authorize",
+                "http://api.twitter.com/oauth/authorize",
+                "https://api.twitter.com/oauth/authorize"
+            ],
+            "js": [
+                "lib/external_libraries/jquery.js",
+                "lib/oauth_authorizer.js"
+            ]
+        }
+    ],
+    "options_page": "options.html"
+}

@@ -1,0 +1,35 @@
+input:hover,
+textarea:hover,
+#setdiv:hover,
+#real_channel:hover {
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	outline: 0;
+}
+
+input:focus,
+#real_channel:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(182, 100, 236, 0.6);
+	outline: 0;
+}
+
+a:link {
+	color:#06F; text-decoration: none;
+}
+a:hover {
+	color:#0CC; text-decoration: none;
+}
+
+#setdiv{
+	border:2px solid #a1a1a1;
+	background:#dddddd;
+	width:140px;
+	padding:7px 10px;
+	border-radius:25px;
+}
+
+textarea {
+	border:2px solid #a1a1a1;
+	resize: none;
+}

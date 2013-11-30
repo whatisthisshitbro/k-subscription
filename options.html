@@ -1,0 +1,130 @@
+<html>
+<head>
+<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet"  type="text/css" href="css/realChnl.css"/>
+<link rel="stylesheet" type="text/css" href="css/options.css" />
+<script src="lib/external_libraries/jquery.js"></script>
+<script src="lib/external_libraries/jquery.textext1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/math_utils.js"></script>
+<script src="lib/options/options.js"></script>
+<script src="lib/options/page.js"></script>
+
+<title>k-Subscription Options</title>
+
+</head>
+<body background="img/icon.png">
+<h3 align="center" class="i18n" id="options_title">k-Subscription Options</h3>
+<div id="saved_notice">
+  <span class="i18n" id="conf_saved">Your configuration has been successfully saved!</span>
+  <div id="restart_notice">
+    <br>
+    <input type="button" class="i18n" id="Yes" value="Yes">
+    <input type="button" class="i18n" id="No" value="No">
+  </div>
+</div>
+<div id="main_area">
+  <p>
+    <span class="i18n" id="remaining_api_hits">Remaining Twitter API Hits: </span><span class="twitter_hits_left"></span>
+    <span class="i18n" id="rate_limit_reset">Rate Limit Reset: </span><span class="twitter_hits_reset"></span>
+  </p>
+<fieldset>
+    <legend id="g_anonymity" class="i18n">Anonymity</legend>
+	<label for="real_channel" class="i18n" id="l_real_channel">Sensitive Channels (screen name):</label>
+    <textarea id="real_channel" rows="4" cols="30" disabled>Add one...</textarea>
+	<br><label for="k_parameter" class="i18n" id="l_k_parameter">k Parameter:</label>
+    <input type="text" name="k_parameter" validator="required,number,positive"><br>
+	<label for="follow_interception" class="i18n" id="l_follow_interception">Follow/Unfollow Interception:</label>
+    <input type="checkbox" name="follow_interception"><br>
+	<div id='setdiv'>
+		<b><a href='./sensitiveSet.html'>Current Sensitive Set</a></b>
+	</div>
+</fieldset>
+  <fieldset>
+    <legend class="i18n" id="g_apiSettings">API Settings</legend>
+    <p class="notice i18n htmlSafe" style="text-align: center; color: black;" id="notice_api_hits">
+      You should keep API hits <span style="color: red;">below <span class="__hourly_limit"></span></span>! Otherwise k-Subscription will stop working properly and timelines won't update anymore.<br>
+    </p>
+    <p class="hits_notice">
+      <span class="i18n" id="l_hits_notice">API hits per hour: </span><span id="predicted_hits_count"></span> / <span class="__hourly_limit"></span>
+    </p>
+    <table class="timelines">
+      <tr>
+        <th></th>
+        <th id="l_visible" class="i18n">Visible</th>
+        <th id="l_refresh_interval" class="i18n">Refresh Interval (s)</th>
+      <tr>
+        <td class="label i18n" id="notif_home">Home:</td>
+        <td><input type="checkbox" name="home_visible"></td>
+        <td><input type="text" name="home_refresh_interval" validator="required,number,minRefresh" converter="RefreshInterval"></td>
+      </tr>
+      <tr>
+        <td class="label i18n" id="notif_mentions">Mentions:</td>
+        <td><input type="checkbox" name="mentions_visible"></td>
+        <td><input type="text" name="mentions_refresh_interval" validator="required,number,minRefresh" converter="RefreshInterval"></td>
+      </tr>
+      <tr>
+        <td class="label i18n" id="notif_dms">DM:</td>
+        <td><input type="checkbox" name="dms_visible"></td>
+        <td><input type="text" name="dms_refresh_interval" validator="required,number,minRefresh" converter="RefreshInterval"></td>
+      </tr>
+      <tr>
+        <td class="label i18n" id="notif_search">Search:</td>
+        <td><input type="checkbox" name="search_visible"></td>
+        <td><input type="text" name="search_refresh_interval" validator="required,number,minRefresh" converter="RefreshInterval"></td>
+      </tr>
+      <tr>
+        <td class="label i18n" id="l_blocked_users">Blocked Users:</td>
+        <td>-</td>
+        <td><input type="text" name="blockedusers_refresh_interval" validator="required,number,minRefresh" converter="RefreshInterval"></td>
+      </tr>
+	  <tr>
+        <td class="label i18n" id="l_follow_noise">Noise follow:</td>
+        <td>-</td>
+        <td><input type="text" name="follow_noise_timeout" validator="required,number" converter="RefreshInterval"></td>
+      </tr>
+    </table><br>
+    <label for="tweets_per_page" class="i18n" id="l_tweets_per_page">Tweets per Page:</label>
+    <input type="text" name="tweets_per_page" validator="required,number,positive" must_restart><br>
+    <label for="max_cached_tweets" class="i18n" id="l_max_cached_tweets">Max Shown Tweets:</label>
+    <input type="text" name="max_cached_tweets" validator="required,number,positive" must_restart><br>
+	<input type="button" value="Reset Popup Size" class="i18n" id="btn_reset_popup_size">
+  </fieldset>
+
+  <fieldset>
+    <legend class="i18n" id="g_advanced">Advanced</legend>
+
+    <label for="request_timeout" class="i18n" id="l_request_timeout">Request Timeout (ms):</label>
+    <input type="text" name="request_timeout" validator="required,number,positive" must_restart><br>
+    <label for="base_url" class="i18n" id="l_base_url">Twitter's API URL:</label>
+    <input type="text" name="base_url" style="width: 300px;" validator="required,url" must_restart><br>
+    <label for="base_oauth_url" class="i18n" id="l_base_oauth_url">OAuth URL:</label>
+    <input type="text" name="base_oauth_url" style="width: 300px;" validator="required,url" must_restart><br>
+
+    <label for="same_signing_urls" class="i18n" id="l_same_signing_urls">Same signing URLs:</label>
+    <input type="checkbox" name="same_signing_urls"><br>
+
+    <label for="base_signing_url" class="i18n" id="l_base_signing_url">API Signing URL:</label>
+    <input type="text" name="base_signing_url" style="width: 300px;" validator="required,url" must_restart><br>
+    <label for="base_oauth_signing_url" class="i18n" id="l_base_oauth_signing_url">OAuth Signing URL:</label>
+    <input type="text" name="base_oauth_signing_url" style="width: 300px;" validator="required,url" must_restart><br>
+
+    <label for="base_search_url" class="i18n" id="l_base_search_url">Search API URL:</label>
+    <input type="text" name="base_search_url" style="width: 300px;" validator="required,url" must_restart><br>
+
+    <label for="use_streaming_api" class="i18n" id="l_use_streaming_api">Use streaming API:</label>
+    <input type="checkbox" name="use_streaming_api" must_restart><br>
+
+    <label for="user_stream_url" class="i18n" id="l_user_stream_url">User Stream URL:</label>
+    <input type="text" name="user_stream_url" style="width: 300px;" validator="required,url" must_restart><br>
+  </fieldset>
+
+  <br>
+  <div id="buttons_area">
+    <input type="button" class="i18n" value="Save" id="btn_save">
+    <input type="button" class="i18n" value="Reset" id="btn_reset">
+    <input type="button" class="i18n" value="Reset to default" id="btn_default">
+  </div>
+</div>
+
+</body>
+</html>

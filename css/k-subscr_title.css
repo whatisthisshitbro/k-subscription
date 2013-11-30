@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'BazarMedium';
+    src: url('http://www.midwinter-dg.com/blog_demos/css-text-shadows/fonts/bazar-webfont.eot');
+    src: url('http://www.midwinter-dg.com/blog_demos/css-text-shadows/fonts/bazar-webfont.eot?iefix') format('eot'),
+         url('http://www.midwinter-dg.com/blog_demos/css-text-shadows/fonts/bazar-webfont.woff') format('woff'),
+         url('http://www.midwinter-dg.com/blog_demos/css-text-shadows/fonts/bazar-webfont.ttf') format('truetype'),
+         url('http://www.midwinter-dg.com/blog_demos/css-text-shadows/fonts/bazar-webfont.svg#webfont4U38ahXF') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#subscr_title{
+	color: #d7ceb2;	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
+	font: 35px 'BazarMedium';
+	letter-spacing: 10px;
+}
+
+.smaller {
+	font-size: .65em;
+	vertical-align: .2em;
+}

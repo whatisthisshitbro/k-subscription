@@ -1,0 +1,45 @@
+div.action_menu {
+  position: absolute;
+  z-index: 999999;
+  opacity: 0.9;
+}
+
+div.action_menu .action_area {
+  display: -webkit-box;
+  background-color: rgb(0, 153, 219);
+  -webkit-border-radius: 5px;
+  white-space: nowrap;
+}
+
+div.action_menu.horizontal div.balloon {
+  height: 9px;
+  width: 12px;
+  margin-top: 6px;
+  float: left;
+}
+
+div.action_menu.vertical div.balloon {
+  height: 12px;
+  width: 9px;
+  margin-left: 6px;
+}
+
+div.action_menu.vertical .action_area {
+  -webkit-box-orient: vertical;
+}
+
+div.action_menu .action {
+  margin: 3px;
+}
+
+div.action.conditionFalse {
+  display: none;
+}
+
+div.action_menu .action a {
+  color: white;
+}
+
+div.action_menu .action_area img.action_loading {
+  margin: 5px 3px 3px 3px;
+}
