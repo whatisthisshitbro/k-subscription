@@ -29,7 +29,9 @@ in a .csv (Comma-separated values) file, then run the ruby script "parseSet.rb" 
 argument the name of your file.
 
 
-	e.g `ruby parseSet.rb <mySet.csv>`
+e.g 
+
+`ruby parseSet.rb <mySet.csv>`
 
 
 [REST API Rate Limit]: https://dev.twitter.com/docs/rate-limiting/1.1
