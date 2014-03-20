@@ -26,7 +26,7 @@ In order to install this browser extension:
 k-subscription anonymity extension includes a demo set with some example sensitive channels 
 (see chnlsInfo.csv). If you want to change this set you can easily put your own sensitive set 
 in a .csv (Comma-separated values) file, then run the ruby script "parseSet.rb" and give as 
-argument the name of your file.e.g 
+argument the name of your file. e.g.:
 
 `ruby parseSet.rb <mySet.csv>`
 
