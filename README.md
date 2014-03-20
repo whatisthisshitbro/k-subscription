@@ -5,7 +5,7 @@ It's main purpose is to preserve user's anonymity when she browses Microblogging
 by obfuscating the user's preferences.
 
 k-subscription anonymity extension uses Twitter API v1.1 and it works under the requirements 
-of its REST API Rate Limit (see https://dev.twitter.com/docs/rate-limiting/1.1).
+of its [REST API Rate Limit][].
 It is also written in Javascript and it uses JQuery, Json2, OAuth and Secure Hash Algorithm (SHA-1) 
 libraries. Its User Interface is written in CSS and uses jquery-ui-1.7.2 library.
 
@@ -28,3 +28,6 @@ k-subscription anonymity extension includes a demo set with some example sensiti
 in a .csv (Comma-separated values) file, then run the ruby script "parseSet.rb" and give as 
 argument the name of your file.
 	e.g `ruby parseSet.rb <mySet.csv>`
+
+
+[REST API Rate Limit]: https://dev.twitter.com/docs/rate-limiting/1.1
