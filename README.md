@@ -1,7 +1,7 @@
-K-SUBSCRIPTION ANONYMITY
+K-SUBSCRIPTION
 ==========
 It's main purpose is to preserve user's anonymity when she browses Microblogging applications
-(For now this extension can be used only for Twitter). The extension succeeds this
+(For now this Google Chrome extension can be used only for Twitter). The extension succeeds this
 by obfuscating the user's preferences.
 
 k-subscription anonymity extension uses Twitter API v1.1 and it works under the requirements 
