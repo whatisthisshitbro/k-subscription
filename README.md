@@ -28,7 +28,6 @@ k-subscription anonymity extension includes a demo set with some example sensiti
 in a .csv (Comma-separated values) file, then run the ruby script "parseSet.rb" and give as 
 argument the name of your file.
 
-
 e.g 
 
 `ruby parseSet.rb <mySet.csv>`
